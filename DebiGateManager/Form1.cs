@@ -34,13 +34,26 @@ namespace DebiGateManager
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Green900, Primary.Grey900, Primary.Green500, Accent.LightGreen400, TextShade.WHITE);
 
 
+            // Manager Settings
             if (ini.KeyExists("Path_Node")) { Path_Node_TB.Text = ini.Read("Path_Node"); }
             else { ini.Write("Path_Node", Path_Node_TB.Text); }
             if (ini.KeyExists("Path_GateWay")) { Path_Gateway_TB.Text = ini.Read("Path_GateWay"); }
             else { ini.Write("Path_GateWay", Path_Gateway_TB.Text); }
             if (ini.KeyExists("Auto_Start")) { Auto_Start_CB.Checked = Convert.ToBoolean(ini.Read("Auto_Start")); }
             else { ini.Write("Auto_Start", Convert.ToString(Auto_Start_CB.Checked)); }
-
+            // Service Settings
+            if (ini.KeyExists("APIHOST", "ServiceSettings")) { APIHOST_TB.Text = ini.Read("APIHOST", "ServiceSettings"); }
+            else { ini.Write("APIHOST", APIHOST_TB.Text, "ServiceSettings"); }
+            if (ini.KeyExists("APIPORT", "ServiceSettings")) { APIPORT.Text = ini.Read("APIPORT", "ServiceSettings"); }
+            else { ini.Write("APIPORT", APIPORT.Text, "ServiceSettings"); }
+            if (ini.KeyExists("APIGATEPATH_AUTH", "ServiceSettings")) { APIGATEPATH_AUTH_TB.Text = ini.Read("APIGATEPATH_AUTH", "ServiceSettings"); }
+            else { ini.Write("APIGATEPATH_AUTH", APIGATEPATH_AUTH_TB.Text, "ServiceSettings"); }
+            if (ini.KeyExists("APIGATEPATH_CONNECTOR", "ServiceSettings")) { APIGATEPATH_CONNECTOR_TB.Text = ini.Read("APIGATEPATH_CONNECTOR", "ServiceSettings"); }
+            else { ini.Write("APIGATEPATH_CONNECTOR", APIGATEPATH_CONNECTOR_TB.Text, "ServiceSettings"); }
+            if (ini.KeyExists("APIGATEPATH_DBTRANSLATE", "ServiceSettings")) { APIGATEPATH_DBTRANSLATE_TB.Text = ini.Read("APIGATEPATH_DBTRANSLATE", "ServiceSettings"); }
+            else { ini.Write("APIGATEPATH_DBTRANSLATE", APIGATEPATH_DBTRANSLATE_TB.Text, "ServiceSettings"); }
+            if (ini.KeyExists("LANGUAGE", "ServiceSettings")) { LANGUAGE_TB.Text = ini.Read("LANGUAGE", "ServiceSettings"); }
+            else { ini.Write("LANGUAGE", LANGUAGE_TB.Text, "ServiceSettings"); }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -162,6 +175,7 @@ namespace DebiGateManager
             ini.Write("APIGATEPATH_AUTH", APIGATEPATH_AUTH_TB.Text, "ServiceSettings");
             ini.Write("APIGATEPATH_CONNECTOR", APIGATEPATH_CONNECTOR_TB.Text, "ServiceSettings");
             ini.Write("APIGATEPATH_DBTRANSLATE", APIGATEPATH_DBTRANSLATE_TB.Text, "ServiceSettings");
+            ini.Write("LANGUAGE", LANGUAGE_TB.Text, "ServiceSettings");
 
             MessageBox.Show("Saved succesfully");
         }
