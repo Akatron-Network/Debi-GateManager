@@ -51,6 +51,7 @@ namespace DebiGateManager
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -59,6 +60,7 @@ namespace DebiGateManager
             this.APIGATEPATH_DBTRANSLATE_TB = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.APIGATEPATH_CONNECTOR_TB = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.APIGATEPATH_AUTH_TB = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.LANGUAGE_TB = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.APIPORT = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.APIHOST_TB = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.Path_Node_TB = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -73,8 +75,8 @@ namespace DebiGateManager
             this.Exit = new MaterialSkin.Controls.MaterialToolStripMenuItem();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.autostarter = new System.Windows.Forms.Timer(this.components);
-            this.LANGUAGE_TB = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
+            this.APIGATEPATH_COLLECTIONS_TB = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabControl1.SuspendLayout();
             this.mainpage.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -291,6 +293,7 @@ namespace DebiGateManager
             this.settingspage.Controls.Add(this.materialFlatButton1);
             this.settingspage.Controls.Add(this.materialLabel10);
             this.settingspage.Controls.Add(this.materialLabel9);
+            this.settingspage.Controls.Add(this.materialLabel12);
             this.settingspage.Controls.Add(this.materialLabel8);
             this.settingspage.Controls.Add(this.materialLabel11);
             this.settingspage.Controls.Add(this.materialLabel7);
@@ -300,6 +303,7 @@ namespace DebiGateManager
             this.settingspage.Controls.Add(this.Path_Gateway_TB);
             this.settingspage.Controls.Add(this.APIGATEPATH_DBTRANSLATE_TB);
             this.settingspage.Controls.Add(this.APIGATEPATH_CONNECTOR_TB);
+            this.settingspage.Controls.Add(this.APIGATEPATH_COLLECTIONS_TB);
             this.settingspage.Controls.Add(this.APIGATEPATH_AUTH_TB);
             this.settingspage.Controls.Add(this.LANGUAGE_TB);
             this.settingspage.Controls.Add(this.APIPORT);
@@ -367,7 +371,7 @@ namespace DebiGateManager
             this.materialLabel10.Depth = 0;
             this.materialLabel10.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.materialLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel10.Location = new System.Drawing.Point(10, 218);
+            this.materialLabel10.Location = new System.Drawing.Point(10, 247);
             this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel10.Name = "materialLabel10";
             this.materialLabel10.Size = new System.Drawing.Size(112, 19);
@@ -380,7 +384,7 @@ namespace DebiGateManager
             this.materialLabel9.Depth = 0;
             this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel9.Location = new System.Drawing.Point(10, 189);
+            this.materialLabel9.Location = new System.Drawing.Point(10, 218);
             this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel9.Name = "materialLabel9";
             this.materialLabel9.Size = new System.Drawing.Size(113, 19);
@@ -399,6 +403,19 @@ namespace DebiGateManager
             this.materialLabel8.Size = new System.Drawing.Size(74, 19);
             this.materialLabel8.TabIndex = 6;
             this.materialLabel8.Text = "Auth Path";
+            // 
+            // materialLabel11
+            // 
+            this.materialLabel11.AutoSize = true;
+            this.materialLabel11.Depth = 0;
+            this.materialLabel11.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.materialLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel11.Location = new System.Drawing.Point(10, 276);
+            this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel11.Name = "materialLabel11";
+            this.materialLabel11.Size = new System.Drawing.Size(73, 19);
+            this.materialLabel11.TabIndex = 6;
+            this.materialLabel11.Text = "Language";
             // 
             // materialLabel7
             // 
@@ -476,7 +493,7 @@ namespace DebiGateManager
             this.APIGATEPATH_DBTRANSLATE_TB.Depth = 0;
             this.APIGATEPATH_DBTRANSLATE_TB.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.APIGATEPATH_DBTRANSLATE_TB.Hint = "";
-            this.APIGATEPATH_DBTRANSLATE_TB.Location = new System.Drawing.Point(142, 218);
+            this.APIGATEPATH_DBTRANSLATE_TB.Location = new System.Drawing.Point(142, 247);
             this.APIGATEPATH_DBTRANSLATE_TB.MouseState = MaterialSkin.MouseState.HOVER;
             this.APIGATEPATH_DBTRANSLATE_TB.Name = "APIGATEPATH_DBTRANSLATE_TB";
             this.APIGATEPATH_DBTRANSLATE_TB.PasswordChar = '\0';
@@ -493,7 +510,7 @@ namespace DebiGateManager
             this.APIGATEPATH_CONNECTOR_TB.Depth = 0;
             this.APIGATEPATH_CONNECTOR_TB.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.APIGATEPATH_CONNECTOR_TB.Hint = "";
-            this.APIGATEPATH_CONNECTOR_TB.Location = new System.Drawing.Point(142, 189);
+            this.APIGATEPATH_CONNECTOR_TB.Location = new System.Drawing.Point(142, 218);
             this.APIGATEPATH_CONNECTOR_TB.MouseState = MaterialSkin.MouseState.HOVER;
             this.APIGATEPATH_CONNECTOR_TB.Name = "APIGATEPATH_CONNECTOR_TB";
             this.APIGATEPATH_CONNECTOR_TB.PasswordChar = '\0';
@@ -521,6 +538,23 @@ namespace DebiGateManager
             this.APIGATEPATH_AUTH_TB.TabIndex = 5;
             this.APIGATEPATH_AUTH_TB.Text = "/api/functions/gateway/auth/";
             this.APIGATEPATH_AUTH_TB.UseSystemPasswordChar = false;
+            // 
+            // LANGUAGE_TB
+            // 
+            this.LANGUAGE_TB.Depth = 0;
+            this.LANGUAGE_TB.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LANGUAGE_TB.Hint = "";
+            this.LANGUAGE_TB.Location = new System.Drawing.Point(142, 276);
+            this.LANGUAGE_TB.MouseState = MaterialSkin.MouseState.HOVER;
+            this.LANGUAGE_TB.Name = "LANGUAGE_TB";
+            this.LANGUAGE_TB.PasswordChar = '\0';
+            this.LANGUAGE_TB.SelectedText = "";
+            this.LANGUAGE_TB.SelectionLength = 0;
+            this.LANGUAGE_TB.SelectionStart = 0;
+            this.LANGUAGE_TB.Size = new System.Drawing.Size(337, 23);
+            this.LANGUAGE_TB.TabIndex = 5;
+            this.LANGUAGE_TB.Text = "TR";
+            this.LANGUAGE_TB.UseSystemPasswordChar = false;
             // 
             // APIPORT
             // 
@@ -684,35 +718,35 @@ namespace DebiGateManager
             this.autostarter.Interval = 5000;
             this.autostarter.Tick += new System.EventHandler(this.autostarter_Tick);
             // 
-            // LANGUAGE_TB
+            // APIGATEPATH_COLLECTIONS_TB
             // 
-            this.LANGUAGE_TB.Depth = 0;
-            this.LANGUAGE_TB.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LANGUAGE_TB.Hint = "";
-            this.LANGUAGE_TB.Location = new System.Drawing.Point(142, 247);
-            this.LANGUAGE_TB.MouseState = MaterialSkin.MouseState.HOVER;
-            this.LANGUAGE_TB.Name = "LANGUAGE_TB";
-            this.LANGUAGE_TB.PasswordChar = '\0';
-            this.LANGUAGE_TB.SelectedText = "";
-            this.LANGUAGE_TB.SelectionLength = 0;
-            this.LANGUAGE_TB.SelectionStart = 0;
-            this.LANGUAGE_TB.Size = new System.Drawing.Size(337, 23);
-            this.LANGUAGE_TB.TabIndex = 5;
-            this.LANGUAGE_TB.Text = "TR";
-            this.LANGUAGE_TB.UseSystemPasswordChar = false;
+            this.APIGATEPATH_COLLECTIONS_TB.Depth = 0;
+            this.APIGATEPATH_COLLECTIONS_TB.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.APIGATEPATH_COLLECTIONS_TB.Hint = "";
+            this.APIGATEPATH_COLLECTIONS_TB.Location = new System.Drawing.Point(142, 189);
+            this.APIGATEPATH_COLLECTIONS_TB.MouseState = MaterialSkin.MouseState.HOVER;
+            this.APIGATEPATH_COLLECTIONS_TB.Name = "APIGATEPATH_COLLECTIONS_TB";
+            this.APIGATEPATH_COLLECTIONS_TB.PasswordChar = '\0';
+            this.APIGATEPATH_COLLECTIONS_TB.SelectedText = "";
+            this.APIGATEPATH_COLLECTIONS_TB.SelectionLength = 0;
+            this.APIGATEPATH_COLLECTIONS_TB.SelectionStart = 0;
+            this.APIGATEPATH_COLLECTIONS_TB.Size = new System.Drawing.Size(337, 23);
+            this.APIGATEPATH_COLLECTIONS_TB.TabIndex = 5;
+            this.APIGATEPATH_COLLECTIONS_TB.Text = "/api/functions/gateway/collections/";
+            this.APIGATEPATH_COLLECTIONS_TB.UseSystemPasswordChar = false;
             // 
-            // materialLabel11
+            // materialLabel12
             // 
-            this.materialLabel11.AutoSize = true;
-            this.materialLabel11.Depth = 0;
-            this.materialLabel11.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.materialLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel11.Location = new System.Drawing.Point(10, 247);
-            this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel11.Name = "materialLabel11";
-            this.materialLabel11.Size = new System.Drawing.Size(73, 19);
-            this.materialLabel11.TabIndex = 6;
-            this.materialLabel11.Text = "Language";
+            this.materialLabel12.AutoSize = true;
+            this.materialLabel12.Depth = 0;
+            this.materialLabel12.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.materialLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel12.Location = new System.Drawing.Point(10, 189);
+            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel12.Name = "materialLabel12";
+            this.materialLabel12.Size = new System.Drawing.Size(120, 19);
+            this.materialLabel12.TabIndex = 6;
+            this.materialLabel12.Text = "Collections Path";
             // 
             // Form1
             // 
@@ -789,6 +823,8 @@ namespace DebiGateManager
         private MaterialSkin.Controls.MaterialRaisedButton Run_BTN;
         private MaterialSkin.Controls.MaterialLabel materialLabel11;
         private MaterialSkin.Controls.MaterialSingleLineTextField LANGUAGE_TB;
+        private MaterialSkin.Controls.MaterialLabel materialLabel12;
+        private MaterialSkin.Controls.MaterialSingleLineTextField APIGATEPATH_COLLECTIONS_TB;
     }
 }
 
