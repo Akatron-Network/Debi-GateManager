@@ -54,6 +54,8 @@ namespace DebiGateManager
             else { ini.Write("APIGATEPATH_CONNECTOR", APIGATEPATH_CONNECTOR_TB.Text, "ServiceSettings"); }
             if (ini.KeyExists("APIGATEPATH_DBTRANSLATE", "ServiceSettings")) { APIGATEPATH_DBTRANSLATE_TB.Text = ini.Read("APIGATEPATH_DBTRANSLATE", "ServiceSettings"); }
             else { ini.Write("APIGATEPATH_DBTRANSLATE", APIGATEPATH_DBTRANSLATE_TB.Text, "ServiceSettings"); }
+            if (ini.KeyExists("APIGATEPATH_DBSCHEME", "ServiceSettings")) { APIGATEPATH_DBSCHEME_TB.Text = ini.Read("APIGATEPATH_DBSCHEME", "ServiceSettings"); }
+            else { ini.Write("APIGATEPATH_DBSCHEME", APIGATEPATH_DBSCHEME_TB.Text, "ServiceSettings"); }
             if (ini.KeyExists("LANGUAGE", "ServiceSettings")) { LANGUAGE_TB.Text = ini.Read("LANGUAGE", "ServiceSettings"); }
             else { ini.Write("LANGUAGE", LANGUAGE_TB.Text, "ServiceSettings"); }
         }
@@ -178,6 +180,7 @@ namespace DebiGateManager
             ini.Write("APIGATEPATH_COLLECTIONS", APIGATEPATH_COLLECTIONS_TB.Text, "ServiceSettings");
             ini.Write("APIGATEPATH_CONNECTOR", APIGATEPATH_CONNECTOR_TB.Text, "ServiceSettings");
             ini.Write("APIGATEPATH_DBTRANSLATE", APIGATEPATH_DBTRANSLATE_TB.Text, "ServiceSettings");
+            ini.Write("APIGATEPATH_DBSCHEME", APIGATEPATH_DBSCHEME_TB.Text, "ServiceSettings");
             ini.Write("LANGUAGE", LANGUAGE_TB.Text, "ServiceSettings");
 
             MessageBox.Show("Saved succesfully");
