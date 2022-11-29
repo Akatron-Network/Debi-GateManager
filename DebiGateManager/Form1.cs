@@ -56,6 +56,11 @@ namespace DebiGateManager
             else { ini.Write("APIGATEPATH_DBTRANSLATE", APIGATEPATH_DBTRANSLATE_TB.Text, "ServiceSettings"); }
             if (ini.KeyExists("APIGATEPATH_DBSCHEME", "ServiceSettings")) { APIGATEPATH_DBSCHEME_TB.Text = ini.Read("APIGATEPATH_DBSCHEME", "ServiceSettings"); }
             else { ini.Write("APIGATEPATH_DBSCHEME", APIGATEPATH_DBSCHEME_TB.Text, "ServiceSettings"); }
+            if (ini.KeyExists("APIGATEPATH_DATAMODEL", "ServiceSettings")) { APIGATEPATH_DATAMODEL_TB.Text = ini.Read("APIGATEPATH_DATAMODEL", "ServiceSettings"); }
+            else { ini.Write("APIGATEPATH_DATAMODEL", APIGATEPATH_DATAMODEL_TB.Text, "ServiceSettings"); }
+            if (ini.KeyExists("APIGATEPATH_DATAUNION", "ServiceSettings")) { APIGATEPATH_DATAUNION_TB.Text = ini.Read("APIGATEPATH_DATAUNION", "ServiceSettings"); }
+            else { ini.Write("APIGATEPATH_DATAUNION", APIGATEPATH_DATAUNION_TB.Text, "ServiceSettings"); }
+
             if (ini.KeyExists("LANGUAGE", "ServiceSettings")) { LANGUAGE_TB.Text = ini.Read("LANGUAGE", "ServiceSettings"); }
             else { ini.Write("LANGUAGE", LANGUAGE_TB.Text, "ServiceSettings"); }
         }
@@ -109,7 +114,7 @@ namespace DebiGateManager
             if (Run_BTN.Text == "RUN SERVICE") {
 
                 runService();
-
+                ConsoleTB.Clear();
                 materialTabControl1.SelectedIndex = 2;
             }
             else {
@@ -117,7 +122,6 @@ namespace DebiGateManager
                 stopService();
 
                 ConsoleTB.SelectionStart = ConsoleTB.TextLength;
-                ConsoleTB.ScrollToCaret();
             }
             ServiceRunCTRL.Enabled = true;
         }
@@ -143,22 +147,28 @@ namespace DebiGateManager
                 line = line.Replace("[33m", "").Replace("[2m", "").Replace("[0m", "").Replace("[37m", "").Replace("[31m", "");
                 ConsoleTB.Text += Environment.NewLine + line;
                 ConsoleTB.SelectionStart = ConsoleTB.TextLength;
-                ConsoleTB.ScrollToCaret();
             }
         }
 
         private void ServiceRunCTRL_Tick(object sender, EventArgs e)
         {
-            if (!proc.HasExited) {
-                Run_BTN.Text = "STOP SERVICE";
-                Service_State_TB.Text = "Service: Active!";
-            }
-            else {
-                Run_BTN.Text = "RUN SERVICE";
-                Service_State_TB.Text = "Service: Deactive!";
-            }
+            try
+            {
 
-            Run_BTN.Enabled = true;
+                if (!proc.HasExited)
+                {
+                    Run_BTN.Text = "STOP SERVICE";
+                    Service_State_TB.Text = "Service: Active!";
+                }
+                else
+                {
+                    Run_BTN.Text = "RUN SERVICE";
+                    Service_State_TB.Text = "Service: Deactive!";
+                }
+
+                Run_BTN.Enabled = true;
+            }
+            catch { }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -181,6 +191,8 @@ namespace DebiGateManager
             ini.Write("APIGATEPATH_CONNECTOR", APIGATEPATH_CONNECTOR_TB.Text, "ServiceSettings");
             ini.Write("APIGATEPATH_DBTRANSLATE", APIGATEPATH_DBTRANSLATE_TB.Text, "ServiceSettings");
             ini.Write("APIGATEPATH_DBSCHEME", APIGATEPATH_DBSCHEME_TB.Text, "ServiceSettings");
+            ini.Write("APIGATEPATH_DATAMODEL", APIGATEPATH_DATAMODEL_TB.Text, "ServiceSettings");
+            ini.Write("APIGATEPATH_DATAUNION", APIGATEPATH_DATAUNION_TB.Text, "ServiceSettings");
             ini.Write("LANGUAGE", LANGUAGE_TB.Text, "ServiceSettings");
 
             MessageBox.Show("Saved succesfully");
@@ -223,7 +235,7 @@ namespace DebiGateManager
 
         private async void login(string username, string password)
         {
-            var ans = await client.GetAsync("http://localhost:8000/api/functions/gateway/auth/?username=" + username + "&password=" + password);
+            var ans = await client.GetAsync("http://debiapi.akatron.net:8000/api/functions/gateway/auth/?username=" + username + "&password=" + password);
             string res = await ans.Content.ReadAsStringAsync();
 
             bool success = (res.Substring(11, 4) == "true");
@@ -261,13 +273,5 @@ namespace DebiGateManager
         }
 
 
-        // Text coloring in rich text box
-        private void AppendText(string text, Color color, bool bold)
-        {
-            ConsoleTB.SelectionStart = ConsoleTB.TextLength;
-            ConsoleTB.SelectionColor = color;
-            ConsoleTB.SelectionFont = new Font(ConsoleTB.Font, bold ? FontStyle.Bold : FontStyle.Regular);
-            ConsoleTB.SelectedText = text;
-        }
     }
 }

@@ -43,6 +43,7 @@ namespace DebiGateManager
             this.username_TB = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
             this.Service_State_TB = new MaterialSkin.Controls.MaterialLabel();
             this.settingspage = new System.Windows.Forms.TabPage();
             this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
@@ -53,6 +54,8 @@ namespace DebiGateManager
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
@@ -65,6 +68,8 @@ namespace DebiGateManager
             this.APIGATEPATH_COLLECTIONS_TB = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.APIGATEPATH_AUTH_TB = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.LANGUAGE_TB = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.APIGATEPATH_DATAUNION_TB = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.APIGATEPATH_DATAMODEL_TB = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.APIPORT = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.APIHOST_TB = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.Path_Node_TB = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -91,18 +96,16 @@ namespace DebiGateManager
             // 
             // materialTabControl1
             // 
-            this.materialTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialTabControl1.Controls.Add(this.mainpage);
             this.materialTabControl1.Controls.Add(this.settingspage);
             this.materialTabControl1.Controls.Add(this.tabPage1);
             this.materialTabControl1.Depth = 0;
-            this.materialTabControl1.Location = new System.Drawing.Point(0, 67);
+            this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.materialTabControl1.Location = new System.Drawing.Point(0, 69);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(496, 427);
+            this.materialTabControl1.Size = new System.Drawing.Size(618, 489);
             this.materialTabControl1.TabIndex = 2;
             // 
             // mainpage
@@ -111,18 +114,21 @@ namespace DebiGateManager
             this.mainpage.Controls.Add(this.Run_BTN);
             this.mainpage.Controls.Add(this.groupBox1);
             this.mainpage.Controls.Add(this.materialDivider1);
+            this.mainpage.Controls.Add(this.materialLabel16);
             this.mainpage.Controls.Add(this.Service_State_TB);
             this.mainpage.Location = new System.Drawing.Point(4, 24);
             this.mainpage.Name = "mainpage";
             this.mainpage.Padding = new System.Windows.Forms.Padding(3);
-            this.mainpage.Size = new System.Drawing.Size(488, 399);
+            this.mainpage.Size = new System.Drawing.Size(610, 461);
             this.mainpage.TabIndex = 0;
-            this.mainpage.Text = "Ana Sayfa";
+            this.mainpage.Text = "HOME";
             // 
             // Run_BTN
             // 
+            this.Run_BTN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Run_BTN.Depth = 0;
-            this.Run_BTN.Location = new System.Drawing.Point(149, 249);
+            this.Run_BTN.Location = new System.Drawing.Point(210, 239);
             this.Run_BTN.MouseState = MaterialSkin.MouseState.HOVER;
             this.Run_BTN.Name = "Run_BTN";
             this.Run_BTN.Primary = true;
@@ -146,7 +152,7 @@ namespace DebiGateManager
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Location = new System.Drawing.Point(54, 55);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(389, 178);
+            this.groupBox1.Size = new System.Drawing.Size(511, 178);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
@@ -157,7 +163,7 @@ namespace DebiGateManager
             this.Login_BTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Login_BTN.Depth = 0;
             this.Login_BTN.Enabled = false;
-            this.Login_BTN.Location = new System.Drawing.Point(327, 128);
+            this.Login_BTN.Location = new System.Drawing.Point(449, 128);
             this.Login_BTN.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Login_BTN.MouseState = MaterialSkin.MouseState.HOVER;
             this.Login_BTN.Name = "Login_BTN";
@@ -187,7 +193,7 @@ namespace DebiGateManager
             this.Logout_BTN.AutoSize = true;
             this.Logout_BTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Logout_BTN.Depth = 0;
-            this.Logout_BTN.Location = new System.Drawing.Point(317, 15);
+            this.Logout_BTN.Location = new System.Drawing.Point(439, 15);
             this.Logout_BTN.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Logout_BTN.MouseState = MaterialSkin.MouseState.HOVER;
             this.Logout_BTN.Name = "Logout_BTN";
@@ -212,7 +218,7 @@ namespace DebiGateManager
             this.password_TB.SelectedText = "";
             this.password_TB.SelectionLength = 0;
             this.password_TB.SelectionStart = 0;
-            this.password_TB.Size = new System.Drawing.Size(289, 23);
+            this.password_TB.Size = new System.Drawing.Size(411, 23);
             this.password_TB.TabIndex = 2;
             this.password_TB.UseSystemPasswordChar = false;
             // 
@@ -243,7 +249,7 @@ namespace DebiGateManager
             this.username_TB.SelectedText = "";
             this.username_TB.SelectionLength = 0;
             this.username_TB.SelectionStart = 0;
-            this.username_TB.Size = new System.Drawing.Size(289, 23);
+            this.username_TB.Size = new System.Drawing.Size(411, 23);
             this.username_TB.TabIndex = 1;
             this.username_TB.UseSystemPasswordChar = false;
             // 
@@ -269,9 +275,24 @@ namespace DebiGateManager
             this.materialDivider1.Location = new System.Drawing.Point(-4, 43);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(495, 10);
+            this.materialDivider1.Size = new System.Drawing.Size(617, 10);
             this.materialDivider1.TabIndex = 3;
             this.materialDivider1.Text = "materialDivider1";
+            // 
+            // materialLabel16
+            // 
+            this.materialLabel16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.materialLabel16.AutoSize = true;
+            this.materialLabel16.Depth = 0;
+            this.materialLabel16.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.materialLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel16.Location = new System.Drawing.Point(5, 437);
+            this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel16.Name = "materialLabel16";
+            this.materialLabel16.Size = new System.Drawing.Size(123, 19);
+            this.materialLabel16.TabIndex = 1;
+            this.materialLabel16.Text = "Akatron Network";
+            this.materialLabel16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Service_State_TB
             // 
@@ -281,7 +302,7 @@ namespace DebiGateManager
             this.Service_State_TB.Depth = 0;
             this.Service_State_TB.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Service_State_TB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Service_State_TB.Location = new System.Drawing.Point(194, 11);
+            this.Service_State_TB.Location = new System.Drawing.Point(255, 11);
             this.Service_State_TB.MouseState = MaterialSkin.MouseState.HOVER;
             this.Service_State_TB.Name = "Service_State_TB";
             this.Service_State_TB.Size = new System.Drawing.Size(108, 19);
@@ -300,6 +321,8 @@ namespace DebiGateManager
             this.settingspage.Controls.Add(this.materialLabel9);
             this.settingspage.Controls.Add(this.materialLabel12);
             this.settingspage.Controls.Add(this.materialLabel8);
+            this.settingspage.Controls.Add(this.materialLabel15);
+            this.settingspage.Controls.Add(this.materialLabel14);
             this.settingspage.Controls.Add(this.materialLabel11);
             this.settingspage.Controls.Add(this.materialLabel7);
             this.settingspage.Controls.Add(this.materialLabel6);
@@ -312,15 +335,17 @@ namespace DebiGateManager
             this.settingspage.Controls.Add(this.APIGATEPATH_COLLECTIONS_TB);
             this.settingspage.Controls.Add(this.APIGATEPATH_AUTH_TB);
             this.settingspage.Controls.Add(this.LANGUAGE_TB);
+            this.settingspage.Controls.Add(this.APIGATEPATH_DATAUNION_TB);
+            this.settingspage.Controls.Add(this.APIGATEPATH_DATAMODEL_TB);
             this.settingspage.Controls.Add(this.APIPORT);
             this.settingspage.Controls.Add(this.APIHOST_TB);
             this.settingspage.Controls.Add(this.Path_Node_TB);
             this.settingspage.Location = new System.Drawing.Point(4, 24);
             this.settingspage.Name = "settingspage";
             this.settingspage.Padding = new System.Windows.Forms.Padding(3);
-            this.settingspage.Size = new System.Drawing.Size(488, 399);
+            this.settingspage.Size = new System.Drawing.Size(610, 461);
             this.settingspage.TabIndex = 1;
-            this.settingspage.Text = "Ayarlar";
+            this.settingspage.Text = "SETTINGS";
             // 
             // materialDivider2
             // 
@@ -331,7 +356,7 @@ namespace DebiGateManager
             this.materialDivider2.Location = new System.Drawing.Point(-3, 80);
             this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider2.Name = "materialDivider2";
-            this.materialDivider2.Size = new System.Drawing.Size(495, 10);
+            this.materialDivider2.Size = new System.Drawing.Size(617, 10);
             this.materialDivider2.TabIndex = 9;
             this.materialDivider2.Text = "materialDivider2";
             // 
@@ -343,7 +368,7 @@ namespace DebiGateManager
             this.Auto_Start_CB.CheckState = System.Windows.Forms.CheckState.Checked;
             this.Auto_Start_CB.Depth = 0;
             this.Auto_Start_CB.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Auto_Start_CB.Location = new System.Drawing.Point(8, 358);
+            this.Auto_Start_CB.Location = new System.Drawing.Point(8, 420);
             this.Auto_Start_CB.Margin = new System.Windows.Forms.Padding(0);
             this.Auto_Start_CB.MouseLocation = new System.Drawing.Point(-1, -1);
             this.Auto_Start_CB.MouseState = MaterialSkin.MouseState.HOVER;
@@ -360,7 +385,7 @@ namespace DebiGateManager
             this.materialFlatButton1.AutoSize = true;
             this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Location = new System.Drawing.Point(433, 352);
+            this.materialFlatButton1.Location = new System.Drawing.Point(555, 414);
             this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton1.Name = "materialFlatButton1";
@@ -436,6 +461,32 @@ namespace DebiGateManager
             this.materialLabel8.TabIndex = 6;
             this.materialLabel8.Text = "Auth Path";
             // 
+            // materialLabel15
+            // 
+            this.materialLabel15.AutoSize = true;
+            this.materialLabel15.Depth = 0;
+            this.materialLabel15.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.materialLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel15.Location = new System.Drawing.Point(10, 363);
+            this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel15.Name = "materialLabel15";
+            this.materialLabel15.Size = new System.Drawing.Size(73, 19);
+            this.materialLabel15.TabIndex = 6;
+            this.materialLabel15.Text = "Language";
+            // 
+            // materialLabel14
+            // 
+            this.materialLabel14.AutoSize = true;
+            this.materialLabel14.Depth = 0;
+            this.materialLabel14.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.materialLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel14.Location = new System.Drawing.Point(10, 334);
+            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel14.Name = "materialLabel14";
+            this.materialLabel14.Size = new System.Drawing.Size(113, 19);
+            this.materialLabel14.TabIndex = 6;
+            this.materialLabel14.Text = "DataUnion Path";
+            // 
             // materialLabel11
             // 
             this.materialLabel11.AutoSize = true;
@@ -445,9 +496,9 @@ namespace DebiGateManager
             this.materialLabel11.Location = new System.Drawing.Point(10, 305);
             this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel11.Name = "materialLabel11";
-            this.materialLabel11.Size = new System.Drawing.Size(73, 19);
+            this.materialLabel11.Size = new System.Drawing.Size(116, 19);
             this.materialLabel11.TabIndex = 6;
-            this.materialLabel11.Text = "Language";
+            this.materialLabel11.Text = "DataModel Path";
             // 
             // materialLabel7
             // 
@@ -515,13 +566,15 @@ namespace DebiGateManager
             this.Path_Gateway_TB.SelectedText = "";
             this.Path_Gateway_TB.SelectionLength = 0;
             this.Path_Gateway_TB.SelectionStart = 0;
-            this.Path_Gateway_TB.Size = new System.Drawing.Size(337, 23);
+            this.Path_Gateway_TB.Size = new System.Drawing.Size(459, 23);
             this.Path_Gateway_TB.TabIndex = 5;
             this.Path_Gateway_TB.Text = "D:\\YEDEK\\Workflow\\Akatron Network\\Debi\\Debi-Gateway\\";
             this.Path_Gateway_TB.UseSystemPasswordChar = false;
             // 
             // APIGATEPATH_DBSCHEME_TB
             // 
+            this.APIGATEPATH_DBSCHEME_TB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.APIGATEPATH_DBSCHEME_TB.Depth = 0;
             this.APIGATEPATH_DBSCHEME_TB.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.APIGATEPATH_DBSCHEME_TB.Hint = "";
@@ -532,13 +585,15 @@ namespace DebiGateManager
             this.APIGATEPATH_DBSCHEME_TB.SelectedText = "";
             this.APIGATEPATH_DBSCHEME_TB.SelectionLength = 0;
             this.APIGATEPATH_DBSCHEME_TB.SelectionStart = 0;
-            this.APIGATEPATH_DBSCHEME_TB.Size = new System.Drawing.Size(337, 23);
+            this.APIGATEPATH_DBSCHEME_TB.Size = new System.Drawing.Size(459, 23);
             this.APIGATEPATH_DBSCHEME_TB.TabIndex = 5;
             this.APIGATEPATH_DBSCHEME_TB.Text = "/api/functions/gateway/dbscheme/";
             this.APIGATEPATH_DBSCHEME_TB.UseSystemPasswordChar = false;
             // 
             // APIGATEPATH_DBTRANSLATE_TB
             // 
+            this.APIGATEPATH_DBTRANSLATE_TB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.APIGATEPATH_DBTRANSLATE_TB.Depth = 0;
             this.APIGATEPATH_DBTRANSLATE_TB.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.APIGATEPATH_DBTRANSLATE_TB.Hint = "";
@@ -549,13 +604,15 @@ namespace DebiGateManager
             this.APIGATEPATH_DBTRANSLATE_TB.SelectedText = "";
             this.APIGATEPATH_DBTRANSLATE_TB.SelectionLength = 0;
             this.APIGATEPATH_DBTRANSLATE_TB.SelectionStart = 0;
-            this.APIGATEPATH_DBTRANSLATE_TB.Size = new System.Drawing.Size(337, 23);
+            this.APIGATEPATH_DBTRANSLATE_TB.Size = new System.Drawing.Size(459, 23);
             this.APIGATEPATH_DBTRANSLATE_TB.TabIndex = 5;
             this.APIGATEPATH_DBTRANSLATE_TB.Text = "/api/functions/gateway/dbtranslates/";
             this.APIGATEPATH_DBTRANSLATE_TB.UseSystemPasswordChar = false;
             // 
             // APIGATEPATH_CONNECTOR_TB
             // 
+            this.APIGATEPATH_CONNECTOR_TB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.APIGATEPATH_CONNECTOR_TB.Depth = 0;
             this.APIGATEPATH_CONNECTOR_TB.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.APIGATEPATH_CONNECTOR_TB.Hint = "";
@@ -566,13 +623,15 @@ namespace DebiGateManager
             this.APIGATEPATH_CONNECTOR_TB.SelectedText = "";
             this.APIGATEPATH_CONNECTOR_TB.SelectionLength = 0;
             this.APIGATEPATH_CONNECTOR_TB.SelectionStart = 0;
-            this.APIGATEPATH_CONNECTOR_TB.Size = new System.Drawing.Size(337, 23);
+            this.APIGATEPATH_CONNECTOR_TB.Size = new System.Drawing.Size(459, 23);
             this.APIGATEPATH_CONNECTOR_TB.TabIndex = 5;
             this.APIGATEPATH_CONNECTOR_TB.Text = "/api/functions/gateway/connector/";
             this.APIGATEPATH_CONNECTOR_TB.UseSystemPasswordChar = false;
             // 
             // APIGATEPATH_COLLECTIONS_TB
             // 
+            this.APIGATEPATH_COLLECTIONS_TB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.APIGATEPATH_COLLECTIONS_TB.Depth = 0;
             this.APIGATEPATH_COLLECTIONS_TB.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.APIGATEPATH_COLLECTIONS_TB.Hint = "";
@@ -583,13 +642,15 @@ namespace DebiGateManager
             this.APIGATEPATH_COLLECTIONS_TB.SelectedText = "";
             this.APIGATEPATH_COLLECTIONS_TB.SelectionLength = 0;
             this.APIGATEPATH_COLLECTIONS_TB.SelectionStart = 0;
-            this.APIGATEPATH_COLLECTIONS_TB.Size = new System.Drawing.Size(337, 23);
+            this.APIGATEPATH_COLLECTIONS_TB.Size = new System.Drawing.Size(459, 23);
             this.APIGATEPATH_COLLECTIONS_TB.TabIndex = 5;
             this.APIGATEPATH_COLLECTIONS_TB.Text = "/api/functions/gateway/collections/";
             this.APIGATEPATH_COLLECTIONS_TB.UseSystemPasswordChar = false;
             // 
             // APIGATEPATH_AUTH_TB
             // 
+            this.APIGATEPATH_AUTH_TB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.APIGATEPATH_AUTH_TB.Depth = 0;
             this.APIGATEPATH_AUTH_TB.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.APIGATEPATH_AUTH_TB.Hint = "";
@@ -600,30 +661,72 @@ namespace DebiGateManager
             this.APIGATEPATH_AUTH_TB.SelectedText = "";
             this.APIGATEPATH_AUTH_TB.SelectionLength = 0;
             this.APIGATEPATH_AUTH_TB.SelectionStart = 0;
-            this.APIGATEPATH_AUTH_TB.Size = new System.Drawing.Size(337, 23);
+            this.APIGATEPATH_AUTH_TB.Size = new System.Drawing.Size(459, 23);
             this.APIGATEPATH_AUTH_TB.TabIndex = 5;
             this.APIGATEPATH_AUTH_TB.Text = "/api/functions/gateway/auth/";
             this.APIGATEPATH_AUTH_TB.UseSystemPasswordChar = false;
             // 
             // LANGUAGE_TB
             // 
+            this.LANGUAGE_TB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LANGUAGE_TB.Depth = 0;
             this.LANGUAGE_TB.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LANGUAGE_TB.Hint = "";
-            this.LANGUAGE_TB.Location = new System.Drawing.Point(142, 305);
+            this.LANGUAGE_TB.Location = new System.Drawing.Point(142, 363);
             this.LANGUAGE_TB.MouseState = MaterialSkin.MouseState.HOVER;
             this.LANGUAGE_TB.Name = "LANGUAGE_TB";
             this.LANGUAGE_TB.PasswordChar = '\0';
             this.LANGUAGE_TB.SelectedText = "";
             this.LANGUAGE_TB.SelectionLength = 0;
             this.LANGUAGE_TB.SelectionStart = 0;
-            this.LANGUAGE_TB.Size = new System.Drawing.Size(337, 23);
+            this.LANGUAGE_TB.Size = new System.Drawing.Size(459, 23);
             this.LANGUAGE_TB.TabIndex = 5;
             this.LANGUAGE_TB.Text = "TR";
             this.LANGUAGE_TB.UseSystemPasswordChar = false;
             // 
+            // APIGATEPATH_DATAUNION_TB
+            // 
+            this.APIGATEPATH_DATAUNION_TB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.APIGATEPATH_DATAUNION_TB.Depth = 0;
+            this.APIGATEPATH_DATAUNION_TB.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.APIGATEPATH_DATAUNION_TB.Hint = "";
+            this.APIGATEPATH_DATAUNION_TB.Location = new System.Drawing.Point(142, 334);
+            this.APIGATEPATH_DATAUNION_TB.MouseState = MaterialSkin.MouseState.HOVER;
+            this.APIGATEPATH_DATAUNION_TB.Name = "APIGATEPATH_DATAUNION_TB";
+            this.APIGATEPATH_DATAUNION_TB.PasswordChar = '\0';
+            this.APIGATEPATH_DATAUNION_TB.SelectedText = "";
+            this.APIGATEPATH_DATAUNION_TB.SelectionLength = 0;
+            this.APIGATEPATH_DATAUNION_TB.SelectionStart = 0;
+            this.APIGATEPATH_DATAUNION_TB.Size = new System.Drawing.Size(459, 23);
+            this.APIGATEPATH_DATAUNION_TB.TabIndex = 5;
+            this.APIGATEPATH_DATAUNION_TB.Text = "/api/functions/gateway/data_union/";
+            this.APIGATEPATH_DATAUNION_TB.UseSystemPasswordChar = false;
+            // 
+            // APIGATEPATH_DATAMODEL_TB
+            // 
+            this.APIGATEPATH_DATAMODEL_TB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.APIGATEPATH_DATAMODEL_TB.Depth = 0;
+            this.APIGATEPATH_DATAMODEL_TB.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.APIGATEPATH_DATAMODEL_TB.Hint = "";
+            this.APIGATEPATH_DATAMODEL_TB.Location = new System.Drawing.Point(142, 305);
+            this.APIGATEPATH_DATAMODEL_TB.MouseState = MaterialSkin.MouseState.HOVER;
+            this.APIGATEPATH_DATAMODEL_TB.Name = "APIGATEPATH_DATAMODEL_TB";
+            this.APIGATEPATH_DATAMODEL_TB.PasswordChar = '\0';
+            this.APIGATEPATH_DATAMODEL_TB.SelectedText = "";
+            this.APIGATEPATH_DATAMODEL_TB.SelectionLength = 0;
+            this.APIGATEPATH_DATAMODEL_TB.SelectionStart = 0;
+            this.APIGATEPATH_DATAMODEL_TB.Size = new System.Drawing.Size(459, 23);
+            this.APIGATEPATH_DATAMODEL_TB.TabIndex = 5;
+            this.APIGATEPATH_DATAMODEL_TB.Text = "/api/functions/gateway/data_model/";
+            this.APIGATEPATH_DATAMODEL_TB.UseSystemPasswordChar = false;
+            // 
             // APIPORT
             // 
+            this.APIPORT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.APIPORT.Depth = 0;
             this.APIPORT.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.APIPORT.Hint = "";
@@ -634,13 +737,15 @@ namespace DebiGateManager
             this.APIPORT.SelectedText = "";
             this.APIPORT.SelectionLength = 0;
             this.APIPORT.SelectionStart = 0;
-            this.APIPORT.Size = new System.Drawing.Size(337, 23);
+            this.APIPORT.Size = new System.Drawing.Size(459, 23);
             this.APIPORT.TabIndex = 5;
             this.APIPORT.Text = "8000";
             this.APIPORT.UseSystemPasswordChar = false;
             // 
             // APIHOST_TB
             // 
+            this.APIHOST_TB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.APIHOST_TB.Depth = 0;
             this.APIHOST_TB.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.APIHOST_TB.Hint = "";
@@ -651,13 +756,15 @@ namespace DebiGateManager
             this.APIHOST_TB.SelectedText = "";
             this.APIHOST_TB.SelectionLength = 0;
             this.APIHOST_TB.SelectionStart = 0;
-            this.APIHOST_TB.Size = new System.Drawing.Size(337, 23);
+            this.APIHOST_TB.Size = new System.Drawing.Size(459, 23);
             this.APIHOST_TB.TabIndex = 5;
-            this.APIHOST_TB.Text = "localhost";
+            this.APIHOST_TB.Text = "debiapi.akatron.net";
             this.APIHOST_TB.UseSystemPasswordChar = false;
             // 
             // Path_Node_TB
             // 
+            this.Path_Node_TB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Path_Node_TB.Depth = 0;
             this.Path_Node_TB.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Path_Node_TB.Hint = "";
@@ -668,7 +775,7 @@ namespace DebiGateManager
             this.Path_Node_TB.SelectedText = "";
             this.Path_Node_TB.SelectionLength = 0;
             this.Path_Node_TB.SelectionStart = 0;
-            this.Path_Node_TB.Size = new System.Drawing.Size(337, 23);
+            this.Path_Node_TB.Size = new System.Drawing.Size(459, 23);
             this.Path_Node_TB.TabIndex = 5;
             this.Path_Node_TB.Text = "C:\\Program Files\\nodejs\\nodeAkatron.exe";
             this.Path_Node_TB.UseSystemPasswordChar = false;
@@ -680,9 +787,9 @@ namespace DebiGateManager
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(488, 399);
+            this.tabPage1.Size = new System.Drawing.Size(610, 461);
             this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Konsol";
+            this.tabPage1.Text = "CONSOLE";
             // 
             // ConsoleTB
             // 
@@ -699,7 +806,7 @@ namespace DebiGateManager
             this.ConsoleTB.Name = "ConsoleTB";
             this.ConsoleTB.ReadOnly = true;
             this.ConsoleTB.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.ConsoleTB.Size = new System.Drawing.Size(470, 380);
+            this.ConsoleTB.Size = new System.Drawing.Size(592, 442);
             this.ConsoleTB.TabIndex = 0;
             this.ConsoleTB.Text = "";
             // 
@@ -723,7 +830,7 @@ namespace DebiGateManager
             this.materialTabSelector1.Location = new System.Drawing.Point(187, 41);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(305, 23);
+            this.materialTabSelector1.Size = new System.Drawing.Size(427, 23);
             this.materialTabSelector1.TabIndex = 3;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
@@ -788,13 +895,14 @@ namespace DebiGateManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 484);
+            this.ClientSize = new System.Drawing.Size(618, 558);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.materialTabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "       GateWay Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -858,11 +966,16 @@ namespace DebiGateManager
         private System.Windows.Forms.Timer autostarter;
         private MaterialSkin.Controls.MaterialRaisedButton Run_BTN;
         private MaterialSkin.Controls.MaterialLabel materialLabel11;
-        private MaterialSkin.Controls.MaterialSingleLineTextField LANGUAGE_TB;
+        private MaterialSkin.Controls.MaterialSingleLineTextField APIGATEPATH_DATAMODEL_TB;
         private MaterialSkin.Controls.MaterialLabel materialLabel12;
         private MaterialSkin.Controls.MaterialSingleLineTextField APIGATEPATH_COLLECTIONS_TB;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
         private MaterialSkin.Controls.MaterialSingleLineTextField APIGATEPATH_DBSCHEME_TB;
+        private MaterialSkin.Controls.MaterialLabel materialLabel15;
+        private MaterialSkin.Controls.MaterialLabel materialLabel14;
+        private MaterialSkin.Controls.MaterialSingleLineTextField LANGUAGE_TB;
+        private MaterialSkin.Controls.MaterialSingleLineTextField APIGATEPATH_DATAUNION_TB;
+        private MaterialSkin.Controls.MaterialLabel materialLabel16;
     }
 }
 
